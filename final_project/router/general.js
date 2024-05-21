@@ -29,7 +29,7 @@ public_users.get('/', async function (req, res) {
         const data = await new Promise((resolve) => {
             resolve(books);
         });
-        res.send(JSON.stringify(data, null, 4));
+        res.status(200).json({"books": data});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
